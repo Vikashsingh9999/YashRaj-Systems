@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YashRaj Systems & Services | Futuristic Industrial Networking & Automation</title>
+    
+    <!-- Meta Descriptions for SEO -->
+    <meta name="description" content="YashRaj Systems & Services provides premium, next-generation industrial automation, DCS/PLC/SCADA integration, and fiber optic network infrastructure for modern smart factories.">
+    <meta name="keywords" content="Industrial Automation, SCADA systems, PLC DCS integration, Fiber Optic Infrastructure, Industrial networking, Pune automation, smart connectivity">
+    <!-- Style Sheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Ambient Grid & Neon Glow Overlay -->
+    <div class="ambient-glow"></div>
+    <div class="grid-bg"></div>
+
+    <!-- Header -->
+    <header>
+        <a class="logo" href="#hero">
+            <div class="logo-symbol"></div>
+            <div class="logo-text">
+                <span class="logo-title">YashRaj</span>
+                <span class="logo-tag">Systems &amp; Services</span>
+            </div>
+        </a>
+        <!-- Desktop nav only — hidden on mobile via CSS -->
+        <nav>
+            <ul class="nav-menu">
+                <li><a class="nav-link" href="#hero">Home</a></li>
+                <li><a class="nav-link" href="#about">About</a></li>
+                <li><a class="nav-link" href="#services">Services</a></li>
+                <li><a class="nav-link" href="#products">Products</a></li>
+                <li><a class="nav-link" href="#showcase">SCADA</a></li>
+                <li><a class="nav-link" href="#industries">Industries</a></li>
+                <li><a class="nav-link" href="#contact">Contact Us</a></li>
+                <li><a href="#contact" class="btn-cyber">Enquire Now</a></li>
+            </ul>
+        </nav>
+        <!-- Hamburger button — only visible on mobile -->
+        <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <!-- Mobile Drawer (completely separate from desktop nav) -->
+    <div class="mobile-backdrop" id="mobileBackdrop"></div>
+    <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+        <div class="drawer-header">
+            <div class="drawer-logo">
+                <span class="logo-title" style="font-family:'Unbounded',sans-serif;font-size:16px;color:var(--color-cyan);">YashRaj</span>
+                <span class="logo-tag" style="font-size:8px;color:var(--text-muted);letter-spacing:0.15em;text-transform:uppercase;">Systems &amp; Services</span>
+            </div>
+            <button class="drawer-close" id="drawerClose" aria-label="Close menu">&#x2715;</button>
+        </div>
+        <nav class="drawer-nav">
+            <a class="drawer-link" href="#hero">Home</a>
+            <a class="drawer-link" href="#about">About</a>
+            <a class="drawer-link" href="#services">Services</a>
+            <a class="drawer-link" href="#products">Products</a>
+            <a class="drawer-link" href="#showcase">SCADA</a>
+            <a class="drawer-link" href="#industries">Industries</a>
+            <a class="drawer-link" href="#contact">Contact Us</a>
+        </nav>
+        <div class="drawer-footer">
+            <a href="#contact" class="btn-cyber drawer-cta">Enquire Now</a>
+        </div>
+    </div>
+
+
+    <!-- Main Content Container -->
+    <main>
+
+        <!-- 1. Hero Section (With Looping Motherboard Video Background) -->
+        <section id="hero">
+            <div class="video-bg-container">
+                <video autoplay muted loop playsinline class="hero-video-bg">
+                    <source src="Connections_internet_connectivit…_202606132314.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay"></div>
+            </div>
+            
+            <div class="hero-layout">
+                <div class="hero-txt">
+                    <span class="subheading-cyber"><i class="fa-solid fa-certificate" style="margin-right: 5px; color: var(--color-cyan);"></i> ISO 9001:2015 Certified // Pune, Maharashtra, India</span>
+                    <h1 class="gradient-text">Industrial Automation Without Boundaries</h1>
+                    <p>End-to-end industrial automation, instrumentation, PLC &amp; SCADA systems, and process engineering solutions for modern industries across India and beyond.</p>
+                    <div class="hero-ctas">
+                        <a href="#services" class="btn-cyber">Our Services <i class="fa-solid fa-chevron-right" style="font-size: 10px; margin-left: 4px;"></i></a>
+                        <a href="#contact" class="btn-sec">Get in Touch</a>
+                    </div>
+                    <div class="hero-telemetry">
+                        <div class="telemetry-item">
+                            <span class="telemetry-val"><span class="stat-counter" data-target="30">0</span>+</span>
+                            <span class="telemetry-lbl">Years Experience</span>
+                        </div>
+                        <div class="telemetry-item">
+                            <span class="telemetry-val"><span class="stat-counter" data-target="10">0</span>+</span>
+                            <span class="telemetry-lbl">Industries Served</span>
+                        </div>
+                        <div class="telemetry-item">
+                            <span class="telemetry-val"><span class="stat-counter" data-target="100">0</span>+</span>
+                            <span class="telemetry-lbl">Products Offered</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. About Section — Mosaic Visual Layout -->
+        <section id="about">
+            <div class="about-grid">
+                <div class="about-graphics-column">
+                    <!-- Image Card 1 -->
+                    <div class="about-image-card">
+                        <!-- Cyber Corners -->
+                        <div class="cyber-corner cyber-corner-tl"></div>
+                        <div class="cyber-corner cyber-corner-tr"></div>
+                        <div class="cyber-corner cyber-corner-bl"></div>
+                        <div class="cyber-corner cyber-corner-br"></div>
+                        
+                        <!-- Laser Scan Line -->
+                        <div class="about-scan-line"></div>
+                        
+                        <!-- HUD Scan Label -->
+                        <div class="hud-badge-cyber" style="top: 12px; left: 12px;">
+                            <span class="pulse-dot"></span>
+                            SYS_LOC // 18.5204° N, 73.8567° E
+                        </div>
+                        <img class="about-tech-img" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80" alt="Industrial instrumentation engineer">
+                    </div>
+                    
+                    <!-- Image Card 2 -->
+                    <div class="about-image-card">
+                        <!-- Cyber Corners -->
+                        <div class="cyber-corner cyber-corner-tl"></div>
+                        <div class="cyber-corner cyber-corner-tr"></div>
+                        <div class="cyber-corner cyber-corner-bl"></div>
+                        <div class="cyber-corner cyber-corner-br"></div>
+                        
+                        <!-- Laser Scan Line -->
+                        <div class="about-scan-line"></div>
+                        
+                        <!-- HUD Scan Label -->
+                        <div class="hud-badge-cyber" style="top: 12px; left: 12px;">
+                            <span class="pulse-dot"></span>
+                            SYS_STATUS // ISO_9001
+                        </div>
+                        <img class="about-tech-img" src="https://images.unsplash.com/photo-1616348436168-de43ad0db179?w=800&q=80" alt="Advanced automated machinery">
+                    </div>
+                </div>
+                <div class="about-info">
+                    <span class="subheading-cyber">Who We Are</span>
+                    <h2 class="gradient-text">Engineering Excellence Since Inception</h2>
+                    <p style="font-size: 16px; line-height: 1.7; color: var(--text-muted); margin-bottom: 16px;">
+                        Founded with a vision to deliver reliable and innovative industrial solutions, <strong>Yashraj System &amp; Services</strong> is a growing engineering and automation company specializing in industrial automation, instrumentation, control systems, electrical solutions, and process engineering services.
+                    </p>
+                    <p style="font-size: 15px; line-height: 1.6; color: var(--text-muted); margin-bottom: 24px;">
+                        We provide end-to-end solutions for industries seeking efficiency, reliability, safety, and technological advancement in their operations. Our team consists of skilled engineers and technical professionals with hands-on experience in industrial projects across multiple sectors.
+                    </p>
+                    <div class="about-features">
+                        <div class="about-feature-card">
+                            <div class="about-feature-icon"><i class="fa-solid fa-microchip"></i></div>
+                            <span>Process Automation</span>
+                        </div>
+                        <div class="about-feature-card">
+                            <div class="about-feature-icon"><i class="fa-solid fa-network-wired"></i></div>
+                            <span>PLC &amp; SCADA Systems</span>
+                        </div>
+                        <div class="about-feature-card">
+                            <div class="about-feature-icon"><i class="fa-solid fa-gauge-high"></i></div>
+                            <span>Field Instrumentation</span>
+                        </div>
+                        <div class="about-feature-card">
+                            <div class="about-feature-icon"><i class="fa-solid fa-bolt"></i></div>
+                            <span>Electrical Integration</span>
+                        </div>
+                        <div class="about-feature-card">
+                            <div class="about-feature-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                            <span>Maintenance Support</span>
+                        </div>
+                        <div class="about-feature-card">
+                            <div class="about-feature-icon"><i class="fa-solid fa-chart-line"></i></div>
+                            <span>Digitalization</span>
+                        </div>
+                        <div class="about-feature-card">
+                            <div class="about-feature-icon"><i class="fa-solid fa-sliders"></i></div>
+                            <span>Calibration Services</span>
+                        </div>
+                    </div>
+
+                    <!-- ISO Certification Callout Card -->
+                    <div class="iso-callout-card" style="padding: 20px 24px; display: flex; align-items: center; gap: 18px; position: relative; overflow: hidden; border-radius: 12px;">
+                        <div style="position: absolute; top: -50px; right: -50px; width: 120px; height: 120px; background: radial-gradient(circle, rgba(140, 16, 7, 0.1) 0%, transparent 70%); pointer-events: none;"></div>
+                        <div class="iso-badge-wrapper">
+                            <div class="iso-badge-ring"></div>
+                            <div class="iso-badge-icon"><i class="fa-solid fa-certificate"></i></div>
+                        </div>
+                        <div style="text-align: left;">
+                            <h4 style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700; color: #ffffff; margin: 0 0 4px 0; letter-spacing: 0.03em; text-transform: uppercase;">ISO 9001:2015 Certified</h4>
+                            <p style="font-family: 'Space Grotesk', sans-serif; font-size: 12px; color: var(--text-muted); margin: 0; line-height: 1.45;">Committed to the highest standards of quality management in all our engineering services and products.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="director-panel" style="margin-top: 30px;">
+                        <div class="director-quote-watermark"><i class="fa-solid fa-quote-right"></i></div>
+                        <div class="director-info">
+                            <h4>Santosh Sharad Kalaskar</h4>
+                            <div class="role">Managing Director</div>
+                            <p>30+ years of experience in Electrical, Control &amp; Instrumentation fields. Extensive expertise in Control &amp; Instrumentation Engineering, Project Costing, Design Engineering, and developed complete automation systems for Power Plants, Sugar Mills, Distillery &amp; Refineries.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Services Section -->
+        <section id="services">
+            <div class="section-hdr">
+                <span class="subheading-cyber">What We Do</span>
+                <h2 class="gradient-text">Comprehensive Automation Services</h2>
+                <p>Delivering high-precision automation systems, from logic programming to physical integration of heavy industrial systems.</p>
+            </div>
+            
+            <div class="services-container">
+                <div class="service-card">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80" alt="Industrial Automation Solutions">
+                    </div>
+                    <div class="service-icon-wrap"><i class="fa-solid fa-gears"></i></div>
+                    <h3>Industrial Automation Solutions</h3>
+                    <p>Complete automation systems for manufacturing and process industries with PLC, DCS, and SCADA integration.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" alt="PLC, SCADA & DCS Systems">
+                    </div>
+                    <div class="service-icon-wrap"><i class="fa-solid fa-desktop"></i></div>
+                    <h3>PLC, SCADA &amp; DCS Systems</h3>
+                    <p>Design, installation, and commissioning of programmable logic controllers, supervisory control systems, and distributed control.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1535813547-99c456a41d4a?w=800&q=80" alt="Instrumentation Engineering">
+                    </div>
+                    <div class="service-icon-wrap"><i class="fa-solid fa-satellite-dish"></i></div>
+                    <h3>Instrumentation Engineering</h3>
+                    <p>Full-scope instrumentation engineering including selection, procurement, installation, and commissioning of all instrument types.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80" alt="Industrial Control Panels">
+                    </div>
+                    <div class="service-icon-wrap"><i class="fa-solid fa-square-poll-vertical"></i></div>
+                    <h3>Industrial Control Panels</h3>
+                    <p>Design and fabrication of PCC, MCC, VFD panels, instrumentation panels, and power distribution boards.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80" alt="Calibration & Maintenance">
+                    </div>
+                    <div class="service-icon-wrap"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                    <h3>Calibration &amp; Maintenance</h3>
+                    <p>Precision calibration of instruments and comprehensive maintenance programs to ensure continuous and reliable plant operations.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1616348436168-de43ad0db179?w=800&q=80" alt="Electrical & Control Integration">
+                    </div>
+                    <div class="service-icon-wrap"><i class="fa-solid fa-circle-nodes"></i></div>
+                    <h3>Electrical &amp; Control Integration</h3>
+                    <p>End-to-end electrical system integration, safety system design, and complete control system installation and commissioning.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80" alt="Process Control Solutions">
+                    </div>
+                    <div class="service-icon-wrap"><i class="fa-solid fa-gauge-high"></i></div>
+                    <h3>Process Control Solutions</h3>
+                    <p>Custom PID tuning, loop optimization, and advanced process control strategies for enhanced operational efficiency.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80" alt="Digitalization of Industry">
+                    </div>
+                    <div class="service-icon-wrap"><i class="fa-solid fa-network-wired"></i></div>
+                    <h3>Digitalization of Industry</h3>
+                    <p>Modernizing industrial operations through IoT integration, data analytics, and Industry 4.0 adoption strategies.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80" alt="Training Programs">
+                    </div>
+                    <div class="service-icon-wrap"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h3>Training Programs</h3>
+                    <p>Instrumentation lab equipment supply and structured training programs for industrial automation and instrumentation professionals.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Product Range Section -->
+        <section id="products">
+            <div class="section-hdr">
+                <span class="subheading-cyber">Product Range</span>
+                <h2 class="gradient-text">Portfolio</h2>
+                <p>We supply and integrate a wide range of industrial-grade sensors, instruments, panels, and systems from leading global manufacturers.</p>
+            </div>
+            
+            <div class="services-container">
+                <!-- Temperature -->
+                <div class="service-card">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1628135081027-43f9c6e3de1a?w=800&q=80" alt="Temperature Instrumentation">
+                    </div>
+                    <div class="service-icon-wrap"><i class="fa-solid fa-thermometer"></i></div>
+                    <h3 style="font-family: 'Space Grotesk', sans-serif;">Temperature</h3>
+                    <p>RTD, Thermocouple, Thermistor, Infrared Sensors, Transmitters &amp; Gauges</p>
+                </div>
+                <!-- Pressure -->
+                <div class="service-card">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80" alt="Pressure Instrumentation">
+                    </div>
+                    <div class="service-icon-wrap"><i class="fa-solid fa-gauge"></i></div>
+                    <h3 style="font-family: 'Space Grotesk', sans-serif;">Pressure</h3>
+                    <p>Transmitters, Gauges, Switches, Differential Pressure Transmitters &amp; Calibrators</p>
+                </div>
+                <!-- Level -->
+                <div class="service-card">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1616348436168-de43ad0db179?w=800&q=80" alt="Level Instruments">
+                    </div>
+                    <div class="service-icon-wrap"><i class="fa-solid fa-ruler-vertical"></i></div>
+                    <h3 style="font-family: 'Space Grotesk', sans-serif;">Level</h3>
+                    <p>Ultrasonic, Radar, Capacitive, Float &amp; Hydrostatic Level Transmitters &amp; Switches</p>
+                </div>
+                <!-- Flow -->
+                <div class="service-card">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80" alt="Flow Meters">
+                    </div>
+                    <div class="service-icon-wrap"><i class="fa-solid fa-arrows-spin"></i></div>
+                    <h3 style="font-family: 'Space Grotesk', sans-serif;">Flow</h3>
+                    <p>Electromagnetic, Turbine, Vortex, Rotameters &amp; Ultrasonic Flow Meters</p>
+                </div>
+                <!-- Position & Proximity -->
+                <div class="service-card">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80" alt="Position & Proximity Sensors">
+                    </div>
+                    <div class="service-icon-wrap"><i class="fa-solid fa-location-crosshairs"></i></div>
+                    <h3 style="font-family: 'Space Grotesk', sans-serif;">Position &amp; Proximity</h3>
+                    <p>Limit Switches, Rotary Encoders, LVDTs, Laser Sensors &amp; Inductive Proximity Sensors</p>
+                </div>
+                <!-- Motion & Speed -->
+                <div class="service-card">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Motion & Speed Systems">
+                    </div>
+                    <div class="service-icon-wrap"><i class="fa-solid fa-gauge-high"></i></div>
+                    <h3 style="font-family: 'Space Grotesk', sans-serif;">Motion &amp; Speed</h3>
+                    <p>Tachometers, Non-Contact Speed Sensors, Accelerometers &amp; Vibration Transmitters</p>
+                </div>
+                <!-- Analytical -->
+                <div class="service-card">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1535813547-99c456a41d4a?w=800&q=80" alt="Analytical Instruments">
+                    </div>
+                    <div class="service-icon-wrap"><i class="fa-solid fa-flask"></i></div>
+                    <h3 style="font-family: 'Space Grotesk', sans-serif;">Analytical</h3>
+                    <p>pH, Conductivity, Dissolved Oxygen, Turbidity &amp; Flue Gas Analyzers</p>
+                </div>
+                <!-- Safety -->
+                <div class="service-card">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80" alt="Safety Sensors">
+                    </div>
+                    <div class="service-icon-wrap"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3 style="font-family: 'Space Grotesk', sans-serif;">Safety</h3>
+                    <p>Flame Detectors, Toxic Gas Leak Detectors, Safety Light Curtains &amp; E-Stop Modules</p>
+                </div>
+                <!-- Electrical -->
+                <div class="service-card">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80" alt="Electrical Controls">
+                    </div>
+                    <div class="service-icon-wrap"><i class="fa-solid fa-bolt-lightning"></i></div>
+                    <h3 style="font-family: 'Space Grotesk', sans-serif;">Electrical</h3>
+                    <p>VFDs, Soft Starters, Electrical Switchgears, Contactors, Relays &amp; Isolators</p>
+                </div>
+                <!-- Control -->
+                <div class="service-card">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" alt="Control Systems">
+                    </div>
+                    <div class="service-icon-wrap"><i class="fa-solid fa-sliders"></i></div>
+                    <h3 style="font-family: 'Space Grotesk', sans-serif;">Control</h3>
+                    <p>PID Controllers, Data Loggers, Signal Isolators, HMIs &amp; Micro-PLC Modules</p>
+                </div>
+                <!-- Control Valves -->
+                <div class="service-card">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80" alt="Control Valves">
+                    </div>
+                    <div class="service-icon-wrap"><i class="fa-solid fa-dharmachakra"></i></div>
+                    <h3 style="font-family: 'Space Grotesk', sans-serif;">Control Valves</h3>
+                    <p>Globe, Ball, Butterfly Control Valves, Pneumatic Actuators, Solenoid Valves &amp; Positioners</p>
+                </div>
+                <!-- Panels -->
+                <div class="service-card">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80" alt="Electrical Panels">
+                    </div>
+                    <div class="service-icon-wrap"><i class="fa-solid fa-table-cells"></i></div>
+                    <h3 style="font-family: 'Space Grotesk', sans-serif;">Panels</h3>
+                    <p>PLC, SCADA, DCS, MCC, APFC, VFD Panels &amp; Custom Control Junction Boxes</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Smart Automation / SCADA monitors -->
+        <section id="scada">
+            <div class="scada-layout">
+                <div class="scada-monitor">
+                    <div class="monitor-hdr">
+                        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.1em;">TELEMETRY LINK</span>
+                        <span class="monitor-badge">LIVE STATUS</span>
+                    </div>
+                    <div class="telemetry-row">
+                        <div class="telemetry-gauge">
+                            <div class="gauge-circle">
+                                <svg>
+                                    <circle class="gauge-bg" cx="45" cy="45" r="40" />
+                                    <circle class="gauge-fill" cx="45" cy="45" r="40" stroke-dasharray="251.2" stroke-dashoffset="62.8" />
+                                </svg>
+                                <span class="gauge-val">75%</span>
+                            </div>
+                            <span class="gauge-lbl">Boiler Pressure</span>
+                        </div>
+                        <div class="telemetry-gauge">
+                            <div class="gauge-circle">
+                                <svg>
+                                    <circle class="gauge-bg" cx="45" cy="45" r="40" />
+                                    <circle class="gauge-fill" cx="45" cy="45" r="40" stroke-dasharray="251.2" stroke-dashoffset="100" style="stroke: var(--color-cyan);" />
+                                </svg>
+                                <span class="gauge-val">60%</span>
+                            </div>
+                            <span class="gauge-lbl">Turbine RPM</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="scada-info">
+                    <span class="subheading-cyber">SCADA Control Room</span>
+                    <h2 class="gradient-text">Real-Time Monitoring &amp; Control</h2>
+                    <p style="font-size: 16px; line-height: 1.7; color: var(--text-muted);">
+                        Complete visibility across all plant operations. We establish smart industrial automation networks. Our customized control panels and remote terminals compile critical diagnostic indices, enabling operators to analyze temperature profiles, pressures, and motor loads from centralized control rooms.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. SCADA System Implementations Showcase -->
+        <section id="showcase">
+            <div class="section-hdr" style="padding: 0 6%;">
+                <span class="subheading-cyber">SCADA Expertise</span>
+                <h2 class="gradient-text">SCADA System Implementations</h2>
+                <p>Proven track record of deploying comprehensive SCADA systems across critical industrial plant sections for real-time monitoring and control.</p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Card 1: Boiler Overview -->
+                <div class="project-card">
+                    <div class="project-card-img">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Boiler Overview">
+                        <div class="project-card-label">BOILER MONITORING</div>
+                    </div>
+                    <div class="project-card-body">
+                        <span class="subheading-cyber">Deployments // 01</span>
+                        <h3>Boiler Overview</h3>
+                        <p>Complete boiler monitoring &amp; control systems, optimizing fuel-air ratio and steam output.</p>
+                    </div>
+                </div>
+                <!-- Card 2: Turbine Overview -->
+                <div class="project-card">
+                    <div class="project-card-img">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80" alt="Turbine Overview">
+                        <div class="project-card-label">TURBINE SYSTEMS</div>
+                    </div>
+                    <div class="project-card-body">
+                        <span class="subheading-cyber">Deployments // 02</span>
+                        <h3>Turbine Overview</h3>
+                        <p>Turbine performance &amp; safety systems, ensuring speed synchronization, vibration limits, and automatic trips.</p>
+                    </div>
+                </div>
+                <!-- Card 3: Mill Overview -->
+                <div class="project-card">
+                    <div class="project-card-img">
+                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80" alt="Mill Overview">
+                        <div class="project-card-label">MILL PROCESSES</div>
+                    </div>
+                    <div class="project-card-body">
+                        <span class="subheading-cyber">Deployments // 03</span>
+                        <h3>Mill Overview</h3>
+                        <p>Mill process control &amp; automation loops for feeding, extraction, and torque synchronization.</p>
+                    </div>
+                </div>
+                <!-- Card 4: Boiling Overview -->
+                <div class="project-card">
+                    <div class="project-card-img">
+                        <img src="https://images.unsplash.com/photo-1535813547-99c456a41d4a?w=800&q=80" alt="Boiling Overview">
+                        <div class="project-card-label">BOILING PROCESSES</div>
+                    </div>
+                    <div class="project-card-body">
+                        <span class="subheading-cyber">Deployments // 04</span>
+                        <h3>Boiling Overview</h3>
+                        <p>Boiling house process management and evaporator control loops, maintaining density and levels.</p>
+                    </div>
+                </div>
+                <!-- Card 5: Distillery Overview -->
+                <div class="project-card">
+                    <div class="project-card-img">
+                        <img src="https://images.unsplash.com/photo-1636747423727-2d39d0aa9796?w=800&q=80" alt="Distillery Overview">
+                        <div class="project-card-label">DISTILLERY SCHEMATICS</div>
+                    </div>
+                    <div class="project-card-body">
+                        <span class="subheading-cyber">Deployments // 05</span>
+                        <h3>Distillery Overview</h3>
+                        <p>Distillery process visualization, loop profiling, temperature curves, and absolute safety parameters.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Sectors We Serve Section -->
+        <section id="industries">
+            <div class="section-hdr">
+                <span class="subheading-cyber">Sectors We Serve</span>
+                <h2 class="gradient-text">Industries We Work With</h2>
+                <p>Our engineering solutions span a broad range of industries, delivering precision automation and instrumentation to each unique environment.</p>
+            </div>
+            
+            <div class="services-container">
+                <div class="service-card" style="min-height: auto; padding: 32px 24px;">
+                    <div class="service-icon-wrap" style="margin-bottom: 16px;"><i class="fa-solid fa-industry"></i></div>
+                    <h3 style="font-size: 18px; margin-bottom: 0; font-family: 'Space Grotesk', sans-serif;">Manufacturing</h3>
+                </div>
+                <div class="service-card" style="min-height: auto; padding: 32px 24px;">
+                    <div class="service-icon-wrap" style="margin-bottom: 16px;"><i class="fa-solid fa-flask-vial"></i></div>
+                    <h3 style="font-size: 18px; margin-bottom: 0; font-family: 'Space Grotesk', sans-serif;">Process Industries</h3>
+                </div>
+                <div class="service-card" style="min-height: auto; padding: 32px 24px;">
+                    <div class="service-icon-wrap" style="margin-bottom: 16px;"><i class="fa-solid fa-bolt"></i></div>
+                    <h3 style="font-size: 18px; margin-bottom: 0; font-family: 'Space Grotesk', sans-serif;">Power &amp; Utilities</h3>
+                </div>
+                <div class="service-card" style="min-height: auto; padding: 32px 24px;">
+                    <div class="service-icon-wrap" style="margin-bottom: 16px;"><i class="fa-solid fa-droplet"></i></div>
+                    <h3 style="font-size: 18px; margin-bottom: 0; font-family: 'Space Grotesk', sans-serif;">Water Treatment</h3>
+                </div>
+                <div class="service-card" style="min-height: auto; padding: 32px 24px;">
+                    <div class="service-icon-wrap" style="margin-bottom: 16px;"><i class="fa-solid fa-prescription-bottle-medical"></i></div>
+                    <h3 style="font-size: 18px; margin-bottom: 0; font-family: 'Space Grotesk', sans-serif;">Pharmaceuticals</h3>
+                </div>
+                <div class="service-card" style="min-height: auto; padding: 32px 24px;">
+                    <div class="service-icon-wrap" style="margin-bottom: 16px;"><i class="fa-solid fa-wheat-awn"></i></div>
+                    <h3 style="font-size: 18px; margin-bottom: 0; font-family: 'Space Grotesk', sans-serif;">Sugar &amp; Food Processing</h3>
+                </div>
+                <div class="service-card" style="min-height: auto; padding: 32px 24px;">
+                    <div class="service-icon-wrap" style="margin-bottom: 16px;"><i class="fa-solid fa-oil-well"></i></div>
+                    <h3 style="font-size: 18px; margin-bottom: 0; font-family: 'Space Grotesk', sans-serif;">Oil &amp; Gas</h3>
+                </div>
+                <div class="service-card" style="min-height: auto; padding: 32px 24px;">
+                    <div class="service-icon-wrap" style="margin-bottom: 16px;"><i class="fa-solid fa-helmet-safety"></i></div>
+                    <h3 style="font-size: 18px; margin-bottom: 0; font-family: 'Space Grotesk', sans-serif;">Infrastructure</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Contact Section -->
+        <section id="contact">
+            <div class="contact-layout">
+                <div class="contact-info-panel">
+                    <div>
+                        <span class="subheading-cyber">Get In Touch</span>
+                        <h2 class="gradient-text">Contact Us</h2>
+                        <p style="margin-top: 15px; font-size: 15px; color: var(--text-muted); line-height: 1.6;">
+                            Let's build your next automation project together.
+                        </p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="contact-detail">
+                            <h5>Address</h5>
+                            <p>C-324, 3rd Floor, Aston Plaza, Ambegaon Bk,<br>Pune – 411 046, Maharashtra, India</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div class="contact-detail">
+                            <h5>Phone</h5>
+                            <p>+91 9422 323 128<br>+91 7972 433 8266</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="contact-detail">
+                            <h5>Email</h5>
+                            <p>sales.yashrajsystems@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-panel">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" placeholder="Company name">
+                        </div>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" placeholder="+91 XXXXX XXXXX" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="email@company.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 24px;">
+                        <label for="service">Service Interest</label>
+                        <select id="service">
+                            <option>Select a service...</option>
+                            <option>Industrial Automation Solutions</option>
+                            <option>PLC, SCADA &amp; DCS Systems</option>
+                            <option>Instrumentation Engineering</option>
+                            <option>Industrial Control Panels</option>
+                            <option>Sensors &amp; Field Instruments Supply</option>
+                            <option>Calibration &amp; Maintenance Services</option>
+                            <option>Electrical &amp; Control Integration</option>
+                            <option>Training Programs</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 24px;">
+                        <label for="message">Message</label>
+                        <textarea id="message" placeholder="Describe your project requirements..."></textarea>
+                    </div>
+                    <button class="btn-cyber" onclick="alert('Enquiry parameters transmitted successfully. Connection established.')">Send Enquiry ▸</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Premium Footer -->
+    <footer>
+
+        <!-- Top accent bar -->
+        <div class="footer-accent-bar"></div>
+
+        <!-- Main footer grid -->
+        <div class="footer-inner">
+
+            <!-- Brand Column -->
+            <div class="footer-brand">
+                <a class="footer-logo" href="#hero">
+                    <div class="logo-symbol" style="border-color: rgba(255,255,255,0.55);"></div>
+                    <div class="logo-text">
+                        <span class="logo-title" style="color: #ffffff;">YashRaj</span>
+                        <span class="logo-tag" style="color: rgba(255,255,255,0.55);">Systems &amp; Services</span>
+                    </div>
+                </a>
+                <p class="footer-brand-desc">Industrial Automation Without Boundaries. Delivering reliable, innovative, and customized engineering solutions to industries across India and beyond.</p>
+                <div class="footer-contact-pills">
+                    <a href="tel:+919422323128" class="footer-pill"><i class="fa-solid fa-phone" style="margin-right: 6px;"></i> +91 9422 323 128</a>
+                    <a href="mailto:sales.yashrajsystems@gmail.com" class="footer-pill"><i class="fa-solid fa-envelope" style="margin-right: 6px;"></i> sales.yashrajsystems@gmail.com</a>
+                    <div class="footer-pill"><i class="fa-solid fa-location-dot" style="margin-right: 6px;"></i> Aston Plaza, Pune – 411 046</div>
+                </div>
+            </div>
+
+            <!-- Links: Services -->
+            <div class="footer-col">
+                <div class="footer-col-title">Services</div>
+                <ul>
+                    <li><a href="#services">Industrial Automation</a></li>
+                    <li><a href="#services">PLC &amp; SCADA</a></li>
+                    <li><a href="#services">Instrumentation</a></li>
+                    <li><a href="#services">Control Panels</a></li>
+                    <li><a href="#services">Calibration</a></li>
+                </ul>
+            </div>
+
+            <!-- Links: Products -->
+            <div class="footer-col">
+                <div class="footer-col-title">Products</div>
+                <ul>
+                    <li><a href="#products">Temperature Sensors</a></li>
+                    <li><a href="#products">Pressure Instruments</a></li>
+                    <li><a href="#products">Flow Meters</a></li>
+                    <li><a href="#products">Control Valves</a></li>
+                    <li><a href="#products">Electrical Panels</a></li>
+                </ul>
+            </div>
+
+            <!-- Links: Company -->
+            <div class="footer-col">
+                <div class="footer-col-title">Company</div>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#industries">Industries</a></li>
+                    <li><a href="#showcase">SCADA Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Bottom bar -->
+        <div class="footer-bottom">
+            <div class="footer-bottom-left">
+                <span>&copy; 2025 Yashraj Systems &amp; Services. All rights reserved.</span>
+            </div>
+            <div class="footer-bottom-center">
+                <span class="footer-integrity-badge"><i class="fa-solid fa-location-dot" style="margin-right: 6px;"></i> Pune, Maharashtra, India</span>
+            </div>
+            <div class="footer-bottom-right">
+                <span>Designed &amp; Developed by
+                    <a href="https://digibrandz.in/" target="_blank" rel="noopener noreferrer" class="footer-dev-credit">DigiBrandz</a>
+                </span>
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>
