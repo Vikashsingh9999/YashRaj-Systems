@@ -255,6 +255,26 @@ header.scrolled {
     border-radius: 50%;
 }
 
+.logo-img {
+    width: 45px;
+    height: 36px;
+    aspect-ratio: 5 / 4;
+    object-fit: contain;
+    background-color: #ffffff;
+    padding: 3px;
+    border-radius: 6px;
+    border: 1.5px solid rgba(140, 16, 7, 0.15);
+    box-shadow: 0 2px 8px rgba(62, 7, 3, 0.05);
+    display: block;
+    transition: var(--transition-smooth);
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+    border-color: var(--color-cyan);
+    box-shadow: 0 4px 12px rgba(140, 16, 7, 0.12);
+}
+
 .logo-text {
     display: flex;
     flex-direction: column;
@@ -2142,3 +2162,196 @@ footer::before {
 .project-card.reveal:nth-child(4) { transition-delay: 0.24s; }
 .project-card.reveal:nth-child(5) { transition-delay: 0.32s; }
 .project-card.reveal:nth-child(6) { transition-delay: 0.40s; }
+
+/* --- Logo Marquee (Associates & Clients) --- */
+.logo-marquee-section {
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--bg-main);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo-marquee-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(140, 16, 7, 0.02) 0%, transparent 80%);
+    pointer-events: none;
+}
+
+.logo-marquee-header {
+    padding: 0 6%;
+}
+
+.logo-marquee-rows-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 20px 0;
+}
+
+/* Gradient fade on left and right for seamless look spanning all rows */
+.logo-marquee-rows-wrapper::before,
+.logo-marquee-rows-wrapper::after {
+    content: "";
+    height: 100%;
+    width: 150px;
+    position: absolute;
+    top: 0;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.logo-marquee-rows-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, var(--bg-main) 0%, transparent 100%);
+}
+
+.logo-marquee-rows-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, var(--bg-main) 0%, transparent 100%);
+}
+
+/* For client section which has a different background color, we need matching gradient overlays */
+.logo-marquee-section-cream {
+    background-color: var(--bg-darker) !important;
+}
+
+.logo-marquee-section-cream .logo-marquee-rows-wrapper::before {
+    background: linear-gradient(to right, var(--bg-darker) 0%, transparent 100%);
+}
+
+.logo-marquee-section-cream .logo-marquee-rows-wrapper::after {
+    background: linear-gradient(to left, var(--bg-darker) 0%, transparent 100%);
+}
+
+.logo-marquee-container {
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.logo-marquee-track-left {
+    display: flex;
+    width: max-content;
+    gap: 40px;
+    animation: marquee-scroll-left 40s linear infinite;
+    align-items: center;
+}
+
+.logo-marquee-track-right {
+    display: flex;
+    width: max-content;
+    gap: 40px;
+    animation: marquee-scroll-right 40s linear infinite;
+    align-items: center;
+}
+
+/* Stagger speeds for rows to create organic, premium movement */
+.logo-marquee-row-1 {
+    animation-duration: 38s;
+}
+
+.logo-marquee-row-2 {
+    animation-duration: 46s;
+}
+
+.logo-marquee-row-3 {
+    animation-duration: 42s;
+}
+
+/* Pause scroll when hovering over container */
+.logo-marquee-rows-wrapper:hover .logo-marquee-track-left,
+.logo-marquee-rows-wrapper:hover .logo-marquee-track-right {
+    animation-play-state: paused;
+}
+
+.logo-marquee-item {
+    flex-shrink: 0;
+    width: 180px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(140, 16, 7, 0.08);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(62, 7, 3, 0.02);
+    transition: var(--transition-smooth);
+}
+
+.logo-marquee-item:hover {
+    transform: translateY(-4px) scale(1.03);
+    background: #ffffff;
+    border-color: rgba(140, 16, 7, 0.3);
+    box-shadow: 0 12px 28px rgba(140, 16, 7, 0.08);
+}
+
+.logo-marquee-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: none;
+    opacity: 0.9;
+    transition: var(--transition-smooth);
+}
+
+.logo-marquee-item:hover img {
+    opacity: 1;
+}
+
+@keyframes marquee-scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes marquee-scroll-right {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Adjust animation speeds and responsiveness */
+@media (max-width: 768px) {
+    .logo-marquee-section {
+        padding: 80px 0;
+    }
+    .logo-marquee-rows-wrapper {
+        gap: 16px;
+    }
+    .logo-marquee-item {
+        width: 140px;
+        height: 70px;
+        padding: 12px;
+    }
+    .logo-marquee-track-left,
+    .logo-marquee-track-right {
+        gap: 20px;
+    }
+    .logo-marquee-row-1 {
+        animation-duration: 25s;
+    }
+    .logo-marquee-row-2 {
+        animation-duration: 32s;
+    }
+    .logo-marquee-row-3 {
+        animation-duration: 28s;
+    }
+    .logo-marquee-rows-wrapper::before,
+    .logo-marquee-rows-wrapper::after {
+        width: 80px;
+    }
+}
+
