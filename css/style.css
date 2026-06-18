@@ -1175,6 +1175,27 @@ section {
     line-height: 1.6;
 }
 
+/* --- Product Cards - Big Icons Style --- */
+#products .service-icon-wrap {
+    width: 68px;
+    height: 68px;
+    font-size: 28px;
+    background: rgba(140, 16, 7, 0.03);
+    border-color: rgba(140, 16, 7, 0.12);
+    box-shadow: 0 4px 15px rgba(140, 16, 7, 0.04);
+    margin-bottom: 24px;
+    border-radius: 8px;
+}
+
+#products .service-card:hover .service-icon-wrap {
+    background: var(--color-cyan);
+    color: #ffffff;
+    border-color: var(--color-cyan);
+    transform: scale(1.08);
+    box-shadow: 0 8px 25px rgba(140, 16, 7, 0.2);
+}
+
+
 /* --- Connectivity / Architecture section --- */
 .connectivity-grid {
     display: grid;
