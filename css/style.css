@@ -2572,3 +2572,17 @@ footer::before {
     max-height: 800px;
     object-fit: contain;
 }
+
+/* Page Cross-Fade transition during loading */
+body.loading header,
+body.loading main,
+body.loading footer,
+body.loading .ambient-glow,
+body.loading .grid-bg {
+    opacity: 0;
+    pointer-events: none;
+}
+
+main, footer, .ambient-glow, .grid-bg {
+    transition: opacity 0.8s ease-in-out;
+}

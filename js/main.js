@@ -72,14 +72,16 @@ document.addEventListener('DOMContentLoaded', () => {
     function dismissLoader() {
         if (loader && !loader.classList.contains('fade-out')) {
             loader.classList.add('fade-out');
+            document.body.classList.remove('loading');
             setTimeout(() => {
                 loader.style.display = 'none';
                 if (!heroAnimated) {
                     heroAnimated = true;
                     triggerHeroAnimation();
                 }
-            }, 600);
+            }, 800);
         } else if (!heroAnimated) {
+            document.body.classList.remove('loading');
             heroAnimated = true;
             triggerHeroAnimation();
         }
