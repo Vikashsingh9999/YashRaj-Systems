@@ -64,8 +64,34 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // --- Hero Entry Animation ---
-    triggerHeroAnimation();
+    // --- Full Screen Loading Overlay & Hero Entry Animation Trigger ---
+    const loader = document.getElementById('loadingOverlay');
+    const loadingVideo = document.getElementById('loadingVideo');
+    let heroAnimated = false;
+
+    function dismissLoader() {
+        if (loader && !loader.classList.contains('fade-out')) {
+            loader.classList.add('fade-out');
+            setTimeout(() => {
+                loader.style.display = 'none';
+                if (!heroAnimated) {
+                    heroAnimated = true;
+                    triggerHeroAnimation();
+                }
+            }, 600);
+        } else if (!heroAnimated) {
+            heroAnimated = true;
+            triggerHeroAnimation();
+        }
+    }
+
+    if (loadingVideo) {
+        loadingVideo.addEventListener('ended', dismissLoader);
+        // Backup dismiss after 4 seconds max
+        setTimeout(dismissLoader, 4000);
+    } else {
+        triggerHeroAnimation();
+    }
 
     function triggerHeroAnimation() {
         const heroEls = [
