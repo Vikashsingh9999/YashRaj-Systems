@@ -1084,6 +1084,9 @@ section {
     line-height: 1.6;
     color: var(--text-muted);
 }
+.director-info p:not(:last-child) {
+    margin-bottom: 14px;
+}
 
 /* --- Services Grid --- */
 .services-container {
@@ -1621,8 +1624,8 @@ footer::before {
 
 .footer-inner {
     display: grid;
-    grid-template-columns: 2.2fr 1.2fr 1.2fr 1fr;
-    gap: 48px;
+    grid-template-columns: 2fr 1.1fr 1.1fr 0.9fr 1.1fr;
+    gap: 32px;
     padding: 80px 6% 60px;
     position: relative;
     z-index: 1;
@@ -2292,13 +2295,13 @@ footer::before {
 
 .logo-marquee-item {
     flex-shrink: 0;
-    width: 180px;
-    height: 90px;
+    width: 190px;
+    height: 96px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 18px;
-    background: rgba(255, 255, 255, 0.7);
+    padding: 12px;
+    background: #ffffff;
     border: 1px solid rgba(140, 16, 7, 0.08);
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(62, 7, 3, 0.02);
@@ -2324,6 +2327,24 @@ footer::before {
 .logo-marquee-item:hover img {
     opacity: 1;
 }
+
+/* Unique Logo Highlight and Enlarge */
+.logo-marquee-item.logo-highlight-unique {
+    border: 1.5px solid var(--color-cyan) !important;
+    background: #ffffff !important;
+    box-shadow: 0 4px 18px rgba(140, 16, 7, 0.12) !important;
+    padding: 8px !important;
+}
+
+.logo-marquee-item.logo-highlight-unique img {
+    transform: scale(1.15);
+    opacity: 1 !important;
+}
+
+.logo-marquee-item.logo-highlight-unique:hover img {
+    transform: scale(1.22);
+}
+
 
 @keyframes marquee-scroll-left {
     0% {
