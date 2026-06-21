@@ -157,4 +157,19 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }, 2000);
     }
+    // --- Defer Motherboard Video Background Loading ---
+    window.addEventListener('load', () => {
+        const heroVideo = document.getElementById('heroVideo');
+        if (heroVideo) {
+            const source = heroVideo.querySelector('source');
+            if (source && source.getAttribute('data-src')) {
+                source.src = source.getAttribute('data-src');
+                heroVideo.load();
+                heroVideo.play().catch(err => {
+                    console.log("Hero background video autoplay prevented or failed:", err);
+                });
+            }
+        }
+    });
 });
+

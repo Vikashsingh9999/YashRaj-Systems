@@ -88,8 +88,8 @@
         <!-- 1. Hero Section (With Looping Motherboard Video Background) -->
         <section id="hero">
             <div class="video-bg-container">
-                <video autoplay muted loop playsinline class="hero-video-bg">
-                    <source src="Connections_internet_connectivit…_202606132314.mp4" type="video/mp4">
+                <video id="heroVideo" autoplay muted loop playsinline class="hero-video-bg" preload="none">
+                    <source data-src="Connections_internet_connectivit…_202606132314.mp4" type="video/mp4">
                 </video>
                 <div class="video-overlay"></div>
             </div>
@@ -137,7 +137,7 @@
                         <div class="hud-badge-cyber" style="top: 12px; left: 12px;">
                             SYS_LOC // 18.5204° N, 73.8567° E
                         </div>
-                        <img class="about-tech-img" src="images/about-tech-1.jpg" alt="Industrial instrumentation engineer">
+                        <img class="about-tech-img" src="images/about-tech-1.jpg" alt="Industrial instrumentation engineer" loading="lazy">
                     </div>
                     
                     <!-- Image Card 2 -->
@@ -152,7 +152,7 @@
                         <div class="hud-badge-cyber" style="top: 12px; left: 12px;">
                             SYS_STATUS // ISO_9001
                         </div>
-                        <img class="about-tech-img" src="images/about-tech-2.jpg" alt="Advanced automated machinery">
+                        <img class="about-tech-img" src="images/about-tech-2.jpg" alt="Advanced automated machinery" loading="lazy">
                     </div>
 
                     <!-- Image Card 3 -->
@@ -167,7 +167,7 @@
                         <div class="hud-badge-cyber" style="top: 12px; left: 12px;">
                             SYS_TECH // ENGINEERING
                         </div>
-                        <img class="about-tech-img" src="images/about-tech-3.jpg" alt="Automation Engineering Services">
+                        <img class="about-tech-img" src="images/about-tech-3.jpg" alt="Automation Engineering Services" loading="lazy">
                     </div>
                 </div>
                 <div class="about-info">
@@ -235,7 +235,7 @@
             <div class="services-container">
                 <div class="service-card">
                     <div class="service-card-img">
-                        <img src="images/industrial-automation.jpg" alt="Industrial Automation Solutions">
+                        <img src="images/industrial-automation.jpg" alt="Industrial Automation Solutions" loading="lazy">
                     </div>
                     <div class="service-icon-wrap"><i class="fa-solid fa-gears"></i></div>
                     <h3>Industrial Automation Solutions</h3>
@@ -243,7 +243,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-card-img">
-                        <img src="images/plc-scada-dcs.jpg" alt="PLC, SCADA & DCS Systems">
+                        <img src="images/plc-scada-dcs.jpg" alt="PLC, SCADA & DCS Systems" loading="lazy">
                     </div>
                     <div class="service-icon-wrap"><i class="fa-solid fa-desktop"></i></div>
                     <h3>PLC, SCADA &amp; DCS Systems</h3>
@@ -251,7 +251,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-card-img">
-                        <img src="images/instrumentation.jpg" alt="Instrumentation Engineering">
+                        <img src="images/instrumentation.jpg" alt="Instrumentation Engineering" loading="lazy">
                     </div>
                     <div class="service-icon-wrap"><i class="fa-solid fa-satellite-dish"></i></div>
                     <h3>Instrumentation Engineering</h3>
@@ -259,7 +259,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-card-img">
-                        <img src="images/control-panels.jpg" alt="Industrial Control Panels">
+                        <img src="images/control-panels.jpg" alt="Industrial Control Panels" loading="lazy">
                     </div>
                     <div class="service-icon-wrap"><i class="fa-solid fa-square-poll-vertical"></i></div>
                     <h3>Industrial Control Panels</h3>
@@ -267,7 +267,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-card-img">
-                        <img src="images/calibration-support.jpg" alt="Calibration & Maintenance">
+                        <img src="images/calibration-support.jpg" alt="Calibration & Maintenance" loading="lazy">
                     </div>
                     <div class="service-icon-wrap"><i class="fa-solid fa-screwdriver-wrench"></i></div>
                     <h3>Calibration &amp; Maintenance</h3>
@@ -275,7 +275,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-card-img">
-                        <img src="images/electrical-integration.jpg" alt="Electrical & Control Integration">
+                        <img src="images/electrical-integration.jpg" alt="Electrical & Control Integration" loading="lazy">
                     </div>
                     <div class="service-icon-wrap"><i class="fa-solid fa-circle-nodes"></i></div>
                     <h3>Electrical &amp; Control Integration</h3>
@@ -283,7 +283,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-card-img">
-                        <img src="images/process-control.jpg" alt="Process Control Solutions">
+                        <img src="images/process-control.jpg" alt="Process Control Solutions" loading="lazy">
                     </div>
                     <div class="service-icon-wrap"><i class="fa-solid fa-gauge-high"></i></div>
                     <h3>Process Control Solutions</h3>
@@ -291,7 +291,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-card-img">
-                        <img src="images/digitalization.jpg" alt="Digitalization of Industry">
+                        <img src="images/digitalization.jpg" alt="Digitalization of Industry" loading="lazy">
                     </div>
                     <div class="service-icon-wrap"><i class="fa-solid fa-network-wired"></i></div>
                     <h3>Digitalization of Industry</h3>
@@ -299,7 +299,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-card-img">
-                        <img src="images/training-programs.jpg" alt="Training Programs">
+                        <img src="images/training-programs.jpg" alt="Training Programs" loading="lazy">
                     </div>
                     <div class="service-icon-wrap"><i class="fa-solid fa-graduation-cap"></i></div>
                     <h3>Training Programs</h3>
