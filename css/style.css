@@ -1743,8 +1743,8 @@ footer::before {
 
 .footer-inner {
     display: grid;
-    grid-template-columns: 2fr 1.1fr 1.1fr 0.9fr 1.1fr;
-    gap: 32px;
+    grid-template-columns: 2.2fr 1.2fr 1.2fr 1fr;
+    gap: 48px;
     padding: 80px 6% 60px;
     position: relative;
     z-index: 1;
