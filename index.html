@@ -644,7 +644,7 @@
                     </div>
                 </div>
                 
-                <div class="contact-form-panel">
+                <form id="contactForm" class="contact-form-panel">
                     <div class="form-grid">
                         <div class="form-group">
                             <label for="name">Full Name</label>
@@ -668,23 +668,23 @@
                     <div class="form-group" style="margin-bottom: 24px;">
                         <label for="service">Service Interest</label>
                         <select id="service">
-                            <option>Select a service...</option>
-                            <option>Industrial Automation Solutions</option>
-                            <option>PLC, SCADA &amp; DCS Systems</option>
-                            <option>Instrumentation Engineering</option>
-                            <option>Industrial Control Panels</option>
-                            <option>Sensors &amp; Field Instruments Supply</option>
-                            <option>Calibration &amp; Maintenance Services</option>
-                            <option>Electrical &amp; Control Integration</option>
-                            <option>Training Programs</option>
+                            <option value="">Select a service...</option>
+                            <option value="Industrial Automation Solutions">Industrial Automation Solutions</option>
+                            <option value="PLC, SCADA &amp; DCS Systems">PLC, SCADA &amp; DCS Systems</option>
+                            <option value="Instrumentation Engineering">Instrumentation Engineering</option>
+                            <option value="Industrial Control Panels">Industrial Control Panels</option>
+                            <option value="Sensors &amp; Field Instruments Supply">Sensors &amp; Field Instruments Supply</option>
+                            <option value="Calibration &amp; Maintenance Services">Calibration &amp; Maintenance Services</option>
+                            <option value="Electrical &amp; Control Integration">Electrical &amp; Control Integration</option>
+                            <option value="Training Programs">Training Programs</option>
                         </select>
                     </div>
                     <div class="form-group" style="margin-bottom: 24px;">
                         <label for="message">Message</label>
                         <textarea id="message" placeholder="Describe your project requirements..."></textarea>
                     </div>
-                    <button class="btn-cyber" onclick="alert('Enquiry parameters transmitted successfully. Connection established.')">Send Enquiry ▸</button>
-                </div>
+                    <button type="submit" class="btn-cyber">Send Enquiry ▸</button>
+                </form>
             </div>
         </section>
 

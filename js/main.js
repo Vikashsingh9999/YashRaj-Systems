@@ -130,6 +130,32 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }, 2000);
     }
+    // --- Contact Form WhatsApp Redirect ---
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const company = document.getElementById('company').value || 'N/A';
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const service = document.getElementById('service').value || 'N/A';
+            const message = document.getElementById('message').value || 'N/A';
+            
+            const text = `*New Enquiry from Website*\n\n` +
+                         `*Full Name:* ${name}\n` +
+                         `*Company:* ${company}\n` +
+                         `*Phone:* ${phone}\n` +
+                         `*Email:* ${email}\n` +
+                         `*Service Interest:* ${service}\n` +
+                         `*Message:* ${message}`;
+            
+            const whatsappUrl = `https://wa.me/919422323128?text=${encodeURIComponent(text)}`;
+            window.open(whatsappUrl, '_blank');
+        });
+    }
+
     // --- Defer Motherboard Video Background Loading ---
     window.addEventListener('load', () => {
         const heroVideo = document.getElementById('heroVideo');
