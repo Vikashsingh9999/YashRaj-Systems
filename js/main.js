@@ -130,29 +130,92 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }, 2000);
     }
-    // --- Contact Form WhatsApp Redirect ---
+    // --- Contact Form Submission (PHP Mail & WhatsApp Redirect) ---
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+            
+            // Disable button and show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Sending Enquiry... <i class="fa-solid fa-spinner fa-spin" style="margin-left: 6px;"></i>';
+            
             const name = document.getElementById('name').value;
             const company = document.getElementById('company').value || 'N/A';
             const phone = document.getElementById('phone').value;
             const email = document.getElementById('email').value;
-            const service = document.getElementById('service').value || 'N/A';
+            const service = document.getElementById('service').value || 'General Enquiry';
             const message = document.getElementById('message').value || 'N/A';
             
-            const text = `*New Enquiry from Website*\n\n` +
-                         `*Full Name:* ${name}\n` +
-                         `*Company:* ${company}\n` +
-                         `*Phone:* ${phone}\n` +
-                         `*Email:* ${email}\n` +
-                         `*Service Interest:* ${service}\n` +
-                         `*Message:* ${message}`;
-            
-            const whatsappUrl = `https://wa.me/919422323128?text=${encodeURIComponent(text)}`;
-            window.open(whatsappUrl, '_blank');
+            // Send AJAX to PHP Mail Server
+            fetch('php/send_mail.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: name,
+                    company: company,
+                    phone: phone,
+                    email: email,
+                    service: service,
+                    message: message
+                })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Server returned error status');
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.status === 'success') {
+                    alert('Thank you! Your enquiry has been received. A confirmation email has been sent to ' + email);
+                    
+                    // Format WhatsApp redirect text
+                    const text = `*New Enquiry from Website*\n\n` +
+                                 `*Full Name:* ${name}\n` +
+                                 `*Company:* ${company}\n` +
+                                 `*Phone:* ${phone}\n` +
+                                 `*Email:* ${email}\n` +
+                                 `*Service Interest:* ${service}\n` +
+                                 `*Message:* ${message}`;
+                    
+                    const whatsappUrl = `https://wa.me/919422323128?text=${encodeURIComponent(text)}`;
+                    
+                    // Reset form
+                    contactForm.reset();
+                    
+                    // Redirect to WhatsApp
+                    window.open(whatsappUrl, '_blank');
+                } else {
+                    alert('Error: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Mail Error:', error);
+                alert('We had trouble sending the email, but we are redirecting you to WhatsApp so you can send your enquiry directly.');
+                
+                // Fallback to WhatsApp redirect even if mail fails
+                const text = `*New Enquiry from Website*\n\n` +
+                             `*Full Name:* ${name}\n` +
+                             `*Company:* ${company}\n` +
+                             `*Phone:* ${phone}\n` +
+                             `*Email:* ${email}\n` +
+                             `*Service Interest:* ${service}\n` +
+                             `*Message:* ${message}`;
+                
+                const whatsappUrl = `https://wa.me/919422323128?text=${encodeURIComponent(text)}`;
+                window.open(whatsappUrl, '_blank');
+            })
+            .finally(() => {
+                // Restore button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+            });
         });
     }
 
