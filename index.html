@@ -781,7 +781,18 @@
             </div>
         </div>
 
-    </footer>
+    <!-- Success Modal Popup -->
+    <div id="successModal" class="modal-overlay">
+        <div class="modal-card">
+            <div class="modal-close" id="modalCloseBtn">&times;</div>
+            <div class="success-icon-wrap">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h2>Submission Successful!</h2>
+            <p>Thank you! Your enquiry has been received. A confirmation email has been sent to <span id="clientEmailDisplay" style="color: var(--color-cyan); font-weight: bold;"></span>.</p>
+            <button class="btn-cyber" id="modalOkBtn" style="margin-top: 20px; width: 100%;">OK</button>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="js/main.js"></script>

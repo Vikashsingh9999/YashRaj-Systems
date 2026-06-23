@@ -173,7 +173,16 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(data => {
                 if (data.status === 'success') {
-                    alert('Thank you! Your enquiry has been received. A confirmation email has been sent to ' + email);
+                    // Update email display inside success modal
+                    if (clientEmailDisplay) {
+                        clientEmailDisplay.textContent = email;
+                    }
+                    
+                    // Show modal and trigger sparkles
+                    if (successModal) {
+                        successModal.classList.add('is-active');
+                        triggerSparkles();
+                    }
                     
                     // Format WhatsApp redirect text
                     const text = `*New Enquiry from Website*\n\n` +
@@ -184,32 +193,31 @@ document.addEventListener('DOMContentLoaded', () => {
                                  `*Service Interest:* ${service}\n` +
                                  `*Message:* ${message}`;
                     
-                    const whatsappUrl = `https://wa.me/919422323128?text=${encodeURIComponent(text)}`;
+                    pendingWhatsAppUrl = `https://wa.me/919422323128?text=${encodeURIComponent(text)}`;
                     
                     // Reset form
                     contactForm.reset();
-                    
-                    // Redirect to WhatsApp
-                    window.open(whatsappUrl, '_blank');
                 } else {
                     alert('Error: ' + data.message);
                 }
             })
             .catch(error => {
                 console.error('Mail Error:', error);
-                alert('We had trouble sending the email, but we are redirecting you to WhatsApp so you can send your enquiry directly.');
                 
-                // Fallback to WhatsApp redirect even if mail fails
-                const text = `*New Enquiry from Website*\n\n` +
-                             `*Full Name:* ${name}\n` +
-                             `*Company:* ${company}\n` +
-                             `*Phone:* ${phone}\n` +
-                             `*Email:* ${email}\n` +
-                             `*Service Interest:* ${service}\n` +
-                             `*Message:* ${message}`;
-                
-                const whatsappUrl = `https://wa.me/919422323128?text=${encodeURIComponent(text)}`;
-                window.open(whatsappUrl, '_blank');
+                // For fail scenario, directly prompt to redirect
+                const confirmWhatsApp = confirm('We had trouble sending the email. Would you like to send your enquiry directly via WhatsApp?');
+                if (confirmWhatsApp) {
+                    const text = `*New Enquiry from Website*\n\n` +
+                                 `*Full Name:* ${name}\n` +
+                                 `*Company:* ${company}\n` +
+                                 `*Phone:* ${phone}\n` +
+                                 `*Email:* ${email}\n` +
+                                 `*Service Interest:* ${service}\n` +
+                                 `*Message:* ${message}`;
+                    
+                    const whatsappUrl = `https://wa.me/919422323128?text=${encodeURIComponent(text)}`;
+                    window.open(whatsappUrl, '_blank');
+                }
             })
             .finally(() => {
                 // Restore button
@@ -218,6 +226,71 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // --- Success Modal & Sparkles Logic ---
+    const successModal = document.getElementById('successModal');
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
+    const modalOkBtn = document.getElementById('modalOkBtn');
+    const clientEmailDisplay = document.getElementById('clientEmailDisplay');
+    let pendingWhatsAppUrl = '';
+
+    function closeSuccessModal(shouldRedirect = false) {
+        if (successModal) {
+            successModal.classList.remove('is-active');
+            if (shouldRedirect && pendingWhatsAppUrl) {
+                window.open(pendingWhatsAppUrl, '_blank');
+            }
+            pendingWhatsAppUrl = '';
+        }
+    }
+
+    if (modalCloseBtn) {
+        modalCloseBtn.addEventListener('click', () => closeSuccessModal(false));
+    }
+    if (modalOkBtn) {
+        modalOkBtn.addEventListener('click', () => closeSuccessModal(true));
+    }
+    if (successModal) {
+        successModal.addEventListener('click', (e) => {
+            if (e.target === successModal) {
+                closeSuccessModal(false);
+            }
+        });
+    }
+
+    function triggerSparkles() {
+        if (!successModal) return;
+        const colors = ['#FFF0C4', '#8C1007', '#33e6ff', '#ff33e6', '#ffe633'];
+        const characters = ['✨', '🌟', '⭐', '🔸', '✨'];
+        
+        for (let i = 0; i < 45; i++) {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle-particle';
+            
+            sparkle.textContent = characters[Math.floor(Math.random() * characters.length)];
+            sparkle.style.left = Math.random() * 100 + 'vw';
+            
+            const size = Math.random() * 15 + 15; // 15px to 30px
+            sparkle.style.fontSize = size + 'px';
+            
+            const delay = Math.random() * 1.5;
+            const duration = Math.random() * 2 + 2; // 2s to 4s
+            sparkle.style.animationDelay = delay + 's';
+            sparkle.style.animationDuration = duration + 's';
+            
+            if (Math.random() > 0.5) {
+                sparkle.style.color = colors[Math.floor(Math.random() * colors.length)];
+            }
+            
+            successModal.appendChild(sparkle);
+            
+            // Remove after animation finishes
+            setTimeout(() => {
+                sparkle.remove();
+            }, (delay + duration) * 1000);
+        }
+    }
+
 
     // --- Defer Motherboard Video Background Loading ---
     window.addEventListener('load', () => {
