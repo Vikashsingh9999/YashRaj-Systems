@@ -178,10 +178,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         clientEmailDisplay.textContent = email;
                     }
                     
-                    // Show modal and trigger sparkles
+                    // Show modal
                     if (successModal) {
                         successModal.classList.add('is-active');
-                        triggerSparkles();
                     }
                     
                     // Format WhatsApp redirect text
@@ -258,38 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function triggerSparkles() {
-        if (!successModal) return;
-        const colors = ['#FFF0C4', '#8C1007', '#33e6ff', '#ff33e6', '#ffe633'];
-        const characters = ['✨', '🌟', '⭐', '🔸', '✨'];
-        
-        for (let i = 0; i < 45; i++) {
-            const sparkle = document.createElement('div');
-            sparkle.className = 'sparkle-particle';
-            
-            sparkle.textContent = characters[Math.floor(Math.random() * characters.length)];
-            sparkle.style.left = Math.random() * 100 + 'vw';
-            
-            const size = Math.random() * 15 + 15; // 15px to 30px
-            sparkle.style.fontSize = size + 'px';
-            
-            const delay = Math.random() * 1.5;
-            const duration = Math.random() * 2 + 2; // 2s to 4s
-            sparkle.style.animationDelay = delay + 's';
-            sparkle.style.animationDuration = duration + 's';
-            
-            if (Math.random() > 0.5) {
-                sparkle.style.color = colors[Math.floor(Math.random() * colors.length)];
-            }
-            
-            successModal.appendChild(sparkle);
-            
-            // Remove after animation finishes
-            setTimeout(() => {
-                sparkle.remove();
-            }, (delay + duration) * 1000);
-        }
-    }
+
 
 
     // --- Defer Motherboard Video Background Loading ---

@@ -2467,11 +2467,11 @@ footer::before {
     }
 }
 
-/* --- Success Modal & Sparkles --- */
+/* --- Success Modal (Green, Clean & Professional) --- */
 .modal-overlay {
     position: fixed;
     inset: 0;
-    background-color: rgba(10, 2, 1, 0.9);
+    background-color: rgba(10, 12, 11, 0.93);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     z-index: 1000000;
@@ -2489,12 +2489,12 @@ footer::before {
 }
 
 .modal-card {
-    background: rgba(62, 7, 3, 0.7);
-    border: 1.5px solid rgba(140, 16, 7, 0.5);
-    box-shadow: 0 0 40px rgba(140, 16, 7, 0.4);
+    background: rgba(15, 25, 20, 0.95);
+    border: 1.5px solid rgba(46, 184, 114, 0.35);
+    box-shadow: 0 0 40px rgba(46, 184, 114, 0.15);
     border-radius: 16px;
     padding: 40px 30px;
-    max-width: 480px;
+    max-width: 460px;
     width: 90%;
     text-align: center;
     position: relative;
@@ -2525,38 +2525,36 @@ footer::before {
 .success-icon-wrap {
     width: 76px;
     height: 76px;
-    background: rgba(140, 16, 7, 0.15);
-    border: 2px solid var(--color-cyan);
+    background: rgba(46, 184, 114, 0.1);
+    border: 2px solid #2ecc71;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 24px;
     font-size: 38px;
-    color: var(--color-cyan);
-    box-shadow: 0 0 20px rgba(51, 230, 255, 0.2);
+    color: #2ecc71;
+    box-shadow: 0 0 20px rgba(46, 184, 114, 0.2);
     animation: successPulse 2s infinite alternate;
 }
 
 @keyframes successPulse {
     0% {
         transform: scale(1);
-        box-shadow: 0 0 15px rgba(51, 230, 255, 0.2);
+        box-shadow: 0 0 15px rgba(46, 184, 114, 0.2);
     }
     100% {
         transform: scale(1.06);
-        box-shadow: 0 0 25px rgba(51, 230, 255, 0.4);
+        box-shadow: 0 0 25px rgba(46, 184, 114, 0.4);
     }
 }
 
 .modal-card h2 {
-    font-family: 'Unbounded', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 24px;
-    font-weight: 800;
+    font-weight: 700;
     margin-bottom: 16px;
-    background: linear-gradient(135deg, #ffffff 40%, var(--color-cream) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #2ecc71;
     letter-spacing: -0.5px;
 }
 
@@ -2567,35 +2565,29 @@ footer::before {
     margin-bottom: 24px;
 }
 
-/* Sparkle Falling / Waving Animation */
-.sparkle-particle {
-    position: fixed;
-    top: -30px;
-    pointer-events: none;
-    z-index: 1000001;
-    animation: sparkleWave 3.5s linear forwards;
+/* Professional Green Button */
+.btn-green-modal {
+    background-color: #2ecc71;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Space Grotesk', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 15px rgba(46, 184, 114, 0.25);
+    margin-top: 20px;
+    width: 100%;
 }
 
-@keyframes sparkleWave {
-    0% {
-        transform: translateY(0) translateX(0) rotate(0deg) scale(0);
-        opacity: 0;
-    }
-    10% {
-        opacity: 1;
-        transform: translateY(10vh) translateX(20px) rotate(45deg) scale(1);
-    }
-    40% {
-        transform: translateY(40vh) translateX(-20px) rotate(180deg) scale(1.2);
-    }
-    70% {
-        transform: translateY(70vh) translateX(25px) rotate(270deg) scale(1);
-    }
-    90% {
-        opacity: 0.9;
-    }
-    100% {
-        transform: translateY(105vh) translateX(-10px) rotate(360deg) scale(0);
-        opacity: 0;
-    }
+.btn-green-modal:hover {
+    background-color: #27ae60;
+    box-shadow: 0 6px 20px rgba(46, 184, 114, 0.4);
+    transform: translateY(-1px);
+}
+
+.btn-green-modal:active {
+    transform: translateY(0);
 }
