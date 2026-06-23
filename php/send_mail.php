@@ -17,7 +17,19 @@ $allowed_origins = [
 $origin = isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : '';
 if (!empty($origin)) {
     $normalized_origin = rtrim($origin, '/');
+    $is_allowed = false;
+    
+    // Check direct matching allowed origins
     if (in_array($normalized_origin, $allowed_origins)) {
+        $is_allowed = true;
+    }
+    // Allow local development on localhost or 127.0.0.1 with any port
+    elseif (preg_match('/^http:\/\/localhost(:\d+)?$/', $normalized_origin) || 
+            preg_match('/^http:\/\/127\.0\.0\.1(:\d+)?$/', $normalized_origin)) {
+        $is_allowed = true;
+    }
+
+    if ($is_allowed) {
         header("Access-Control-Allow-Origin: $normalized_origin");
         header("Access-Control-Allow-Methods: POST, OPTIONS");
         header("Access-Control-Allow-Headers: Content-Type");
@@ -174,6 +186,7 @@ function sendNotificationMail($name, $company, $phone, $email, $service, $messag
         $mail->isHTML(true);
         $mail->Subject = 'New Web Enquiry: ' . $name;
         
+        $ip_addr = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '127.0.0.1';
         $mail->Body = "
         <html>
         <head>
@@ -200,7 +213,7 @@ function sendNotificationMail($name, $company, $phone, $email, $service, $messag
                     <div class='item'><div class='lbl'>Message</div><div class='val'>{$message}</div></div>
                 </div>
                 <div class='ftr'>
-                    IP Address: {$_SERVER['REMOTE_ADDR']} | Time: ".date('Y-m-d H:i:s')."
+                    IP Address: {$ip_addr} | Time: ".date('Y-m-d H:i:s')."
                 </div>
             </div>
         </body>
