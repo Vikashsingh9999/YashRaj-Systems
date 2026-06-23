@@ -17,10 +17,22 @@ $allowed_origins = [
 $origin = isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : '';
 if (!empty($origin)) {
     $normalized_origin = rtrim($origin, '/');
+    $origin_host = parse_url($origin, PHP_URL_HOST);
+    $server_host = $_SERVER['HTTP_HOST'] ?? '';
+    
+    // Remove port numbers from host comparison if present
+    if (strpos($server_host, ':') !== false) {
+        $server_host = explode(':', $server_host)[0];
+    }
+    
     $is_allowed = false;
     
+    // Allow if request is from the same domain
+    if ($origin_host && $server_host && (strcasecmp($origin_host, $server_host) === 0 || strcasecmp(str_replace('www.', '', $origin_host), str_replace('www.', '', $server_host)) === 0)) {
+        $is_allowed = true;
+    }
     // Check direct matching allowed origins
-    if (in_array($normalized_origin, $allowed_origins)) {
+    elseif (in_array($normalized_origin, $allowed_origins)) {
         $is_allowed = true;
     }
     // Allow local development on localhost or 127.0.0.1 with any port
